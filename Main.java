@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -22,7 +23,16 @@ public class Main {
             System.out.println("8. Exit");
 
             System.out.print("Enter your choice: ");
-            int choice = sc.nextInt();
+            
+            // Validate menu choice input
+            int choice;
+            try {
+                choice = sc.nextInt();
+            } catch (InputMismatchException e) {
+                sc.nextLine(); // Clear the bad input from Scanner buffer
+                System.out.println("Error: Please enter a valid menu choice (1-8).");
+                continue;
+            }
 
             if (choice == 8) {
                 System.out.println("Thank you!");
@@ -103,9 +113,14 @@ public class Main {
                         break;
 
                     default:
-                        System.out.println("Invalid choice.");
+                        System.out.println("Invalid choice. Please select a menu option (1-8).");
                 }
 
+            } catch (InputMismatchException e) {
+                sc.nextLine(); // Clear the bad input from Scanner buffer
+                System.out.println("Error: Please enter valid numbers.");
+            } catch (ArithmeticException e) {
+                System.out.println("Error: " + e.getMessage());
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
             }
