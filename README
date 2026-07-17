@@ -1,0 +1,35 @@
+# Java Calculator
+
+A simple menu-driven calculator built in Java using the Scanner class.
+
+## Features
+
+- Addition
+- Subtraction
+- Multiplication
+- Division
+- Modulus
+- Power
+- Square Root
+- Exception Handling
+
+## Technologies
+
+- Java
+- OOP
+- Scanner Class
+- Exception Handling
+
+## How to Run
+
+Compile:
+
+```bash
+javac *.java
+```
+
+Run:
+
+```bash
+java Main
+```
